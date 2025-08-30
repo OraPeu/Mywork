@@ -146,7 +146,7 @@ class PieceJobApp {
                         
                         <ul class="nav-menu">
                             <li><a href="#" data-page="jobs">Find Services</a></li>
-                            <li><a href="#" data-page="post-job">Post Job</a></li>
+                            <li><a href="#" data-page="post-job">Po</a></li>
                             <li><a href="#" data-page="about">About</a></li>
                         </ul>
                         
