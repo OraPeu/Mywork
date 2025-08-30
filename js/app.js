@@ -167,7 +167,7 @@ class PieceJobApp {
                 <div class="mobile-menu">
                     <button class="mobile-menu-close">×</button>
                     <ul class="mobile-menu-items">
-                        <li><a href="#" data-page="jobs">Find Services</a></li>
+                        <li><a href="#" data-page="jobs">Jobs</a></li>
                         ${isLoggedIn ? `
                             <li><a href="#" data-page="post-job">Post Job</a></li>
                             <li><a href="#" data-page="chat">Messages</a></li>
