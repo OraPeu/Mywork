@@ -207,8 +207,8 @@ class JobsManager {
                 </div>
                 
                 <div style="margin-top: 12px;">
-                    <button class="btn btn-primary" style="width: 100%;" onclick="jobsManager.applyToJob(${job.id})">
-                        Apply Now
+                    <button class="btn btn-primary" style="width: 100%;" onclick="biddingManager.showBidModal(${job.id})">
+                        ${window.app?.currentUser?.userType === 'service-provider' || window.app?.currentUser?.userType === 'both' ? 'Place Bid' : 'Apply Now'}
                     </button>
                 </div>
             </div>

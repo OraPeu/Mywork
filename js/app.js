@@ -92,6 +92,20 @@ class PieceJobApp {
             case 'jobs':
                 app.innerHTML = this.renderJobsPage();
                 break;
+            case 'account':
+                if (this.currentUser) {
+                    app.innerHTML = this.renderAccountPage();
+                } else {
+                    this.navigateTo('login');
+                }
+                break;
+            case 'messages':
+                if (this.currentUser) {
+                    app.innerHTML = this.renderMessagesPage();
+                } else {
+                    this.navigateTo('login');
+                }
+                break;
             case 'post-job':
                 if (this.currentUser) {
                     app.innerHTML = this.renderPostJobPage();
@@ -146,8 +160,14 @@ class PieceJobApp {
                         
                         <ul class="nav-menu">
                             <li><a href="#" data-page="jobs">Find Services</a></li>
-                            <li><a href="#" data-page="post-job">Po</a></li>
-                            <li><a href="#" data-page="about">About</a></li>
+                            ${isLoggedIn && this.currentUser.userType !== 'customer' ? `
+                                <li><a href="#" data-page="jobs">Jobs</a></li>
+                                <li><a href="#" data-page="account">Account</a></li>
+                                <li><a href="#" data-page="messages">Messages</a></li>
+                            ` : `
+                                <li><a href="#" data-page="jobs">Find Services</a></li>
+                                <li><a href="#" data-page="post-job">Post Job</a></li>
+                            `}
                         </ul>
                         
                         <div class="nav-actions">
@@ -169,11 +189,16 @@ class PieceJobApp {
                     <ul class="mobile-menu-items">
                         <li><a href="#" data-page="jobs">Jobs</a></li>
                         ${isLoggedIn ? `
-                            <li><a href="#" data-page="post-job">Post Job</a></li>
-                            <li><a href="#" data-page="chat">Messages</a></li>
-                            <li><a href="#" data-page="job-history">My Jobs</a></li>
+                            ${this.currentUser.userType !== 'customer' ? `
+                                <li><a href="#" data-page="account">Account</a></li>
+                                <li><a href="#" data-page="messages">Messages</a></li>
+                            ` : `
+                                <li><a href="#" data-page="post-job">Post Job</a></li>
+                                <li><a href="#" data-page="chat">Messages</a></li>
+                                <li><a href="#" data-page="job-history">My Jobs</a></li>
+                            `}
                         ` : `
-                            <li><a href="#" data-page="about">About</a></li>
+                            <li><a href="#" data-page="post-job">Post Job</a></li>
                         `}
                         ${isLoggedIn ? `
                             <li><a href="#" data-page="dashboard">Dashboard</a></li>
@@ -338,6 +363,38 @@ class PieceJobApp {
                         <h2 style="margin-bottom: 24px;">Recent Service Opportunities</h2>
                         <div id="jobsList"></div>
                     </div>
+                </div>
+            </main>
+        `;
+    }
+
+    renderAccountPage() {
+        return `
+            ${this.renderHeader()}
+            <main class="main">
+                <div class="container">
+                    <section class="hero">
+                        <h1 class="hero-title">My <span class="gradient-text">Account</span></h1>
+                        <p class="hero-subtitle">Manage your profile, skills, and documents to attract more clients.</p>
+                    </section>
+                    
+                    <div id="accountContent"></div>
+                </div>
+            </main>
+        `;
+    }
+
+    renderMessagesPage() {
+        return `
+            ${this.renderHeader()}
+            <main class="main">
+                <div class="container">
+                    <section class="hero">
+                        <h1 class="hero-title">Your <span class="gradient-text">Messages</span></h1>
+                        <p class="hero-subtitle">Communicate with clients about job opportunities and ongoing projects.</p>
+                    </section>
+                    
+                    <div id="messagesContent"></div>
                 </div>
             </main>
         `;

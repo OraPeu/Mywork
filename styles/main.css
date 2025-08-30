@@ -915,6 +915,329 @@ body {
     font-size: 14px;
 }
 
+/* Account Page Styles */
+.account-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    font-weight: 500;
+    color: #718096;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    color: #38a169;
+    border-bottom-color: #38a169;
+}
+
+.tab-btn:hover {
+    color: #38a169;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.account-form {
+    max-width: 600px;
+}
+
+.form-section {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.form-section h3 {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.skills-container {
+    margin-top: 16px;
+}
+
+.skills-input-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.skills-input-group input {
+    flex: 1;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(56, 161, 105, 0.1);
+    color: #38a169;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.skill-remove {
+    background: none;
+    border: none;
+    color: #38a169;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.document-upload-area {
+    border: 2px dashed rgba(56, 161, 105, 0.3);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(56, 161, 105, 0.05);
+    margin-bottom: 16px;
+}
+
+.document-upload-area:hover {
+    border-color: rgba(56, 161, 105, 0.5);
+    background: rgba(56, 161, 105, 0.1);
+}
+
+.uploaded-document {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: rgba(56, 161, 105, 0.1);
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.btn-remove {
+    background: rgba(239, 68, 68, 0.1);
+    color: #e53e3e;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.documents-list {
+    margin-top: 16px;
+}
+
+.document-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #f7fafc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.document-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.document-name {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.document-type {
+    font-size: 12px;
+    color: #718096;
+}
+
+.security-notice {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(56, 161, 105, 0.05);
+    border: 1px solid rgba(56, 161, 105, 0.2);
+    border-radius: 8px;
+    margin-top: 16px;
+}
+
+.security-icon {
+    font-size: 24px;
+}
+
+.security-notice h4 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #38a169;
+}
+
+.security-notice p {
+    margin: 0;
+    font-size: 12px;
+    color: #718096;
+}
+
+.chat-client-name {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.chat-job-title {
+    font-size: 14px;
+    color: #718096;
+}
+
+.chat-item-job {
+    font-size: 12px;
+    color: #38a169;
+    margin-bottom: 2px;
+}
+
+.chat-status {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin-top: 4px;
+    display: inline-block;
+}
+
+.chat-status.active {
+    background: rgba(56, 161, 105, 0.1);
+    color: #38a169;
+}
+
+.chat-status.pending {
+    background: rgba(237, 137, 54, 0.1);
+    color: #dd6b20;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px 0;
+    margin-bottom: 20px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #718096;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body {
+    padding: 0 24px 24px;
+}
+
+.job-summary {
+    background: #f7fafc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.job-summary h4 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.job-summary p {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #4a5568;
+}
+
+.job-details {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: #718096;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.modal-actions .btn {
+    flex: 1;
+}
+
 /* Responsive adjustments for new components */
 @media (max-width: 767px) {
     .chat-container {
@@ -938,5 +1261,20 @@ body {
     
     .photo-preview-grid {
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    
+    .account-tabs {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .tab-btn {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0;
+    }
+    
+    .modal-content {
+        margin: 20px;
+        max-height: calc(100vh - 40px);
     }
 }
